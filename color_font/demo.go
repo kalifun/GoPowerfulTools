@@ -33,12 +33,55 @@ const (
 	TextWhite
 )
 
+func NewColorFont(str string) *FontColor {
+	return &FontColor{Str: str}
+}
+
+type FontColor struct {
+	Str string
+}
+
+func (fc *FontColor) Green() string {
+	return SetColor(fc.Str, 0, 0, TextGreen)
+}
+
+func (fc *FontColor) Red() string {
+	return SetColor(fc.Str, 0, 0, TextRed)
+}
+
+func (fc *FontColor) Yellow() string {
+	return SetColor(fc.Str, 0, 0, TextYellow)
+}
+
+func (fc *FontColor) Blue() string {
+	return SetColor(fc.Str, 0, 0, TextBlue)
+}
+
+func (fc *FontColor) Magenta() string {
+	return SetColor(fc.Str, 0, 0, TextMagenta)
+}
+
+func (fc *FontColor) Cyan() string {
+	return SetColor(fc.Str, 0, 0, TextCyan)
+}
+
+func (fc *FontColor) White() string {
+	return SetColor(fc.Str, 0, 0, TextWhite)
+}
+
+func (fc *FontColor) Black() string {
+	return SetColor(fc.Str, 0, 0, TextBlack)
+}
+
 /*
 Demo
 */
 func main() {
 	msg := Green(`ssss`)
 	fmt.Println(msg)
+	messag := "sssss"
+	setColor := NewColorFont(messag)
+	fmt.Println(setColor.Green())
 }
 
 func Green(msg string) string {
